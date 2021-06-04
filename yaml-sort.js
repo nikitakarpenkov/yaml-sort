@@ -64,8 +64,13 @@ const fs = require('fs');
 
 let success = true;
 
-const sortNestedArrays = (obj) => { // based on https://stackoverflow.com/a/54272512
-    Object.keys(obj).forEach(key => {
+const sortNestedArrays = (obj) => {
+    if (!obj || typeof obj !== 'object') {
+        return
+    } else if (Array.isArray(obj)) {
+        obj.sort()
+    }
+    Object.keys(obj).forEach(key => { // based on https://stackoverflow.com/a/54272512
         if (typeof obj[key] === 'object') {
             if (Array.isArray(obj[key])) {
                 obj[key].sort()
