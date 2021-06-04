@@ -13,7 +13,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ddebin/yaml-sort.git"
+    "url": "git+https://github.com/nikitakarpenkov/yaml-sort.git"
   },
   "keywords": [
     "cli",

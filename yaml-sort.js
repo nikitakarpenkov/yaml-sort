@@ -64,11 +64,26 @@ const fs = require('fs');
 
 let success = true;
 
+const sortNestedArrays = (obj) => { // based on https://stackoverflow.com/a/54272512
+    Object.keys(obj).forEach(key => {
+        if (typeof obj[key] === 'object') {
+            if (Array.isArray(obj[key])) {
+                obj[key].sort()
+            }
+            sortNestedArrays(obj[key])
+        }
+    })
+}
+
 argv.input.forEach((file) => {
     try {
         const content = fs.readFileSync(file, 'utf8');
 
-        const sorted = yaml.dump(yaml.load(content), {
+        const source = yaml.load(content)
+
+        sortNestedArrays(source)
+
+        const sorted = yaml.dump(source, {
             sortKeys: true,
             indent: argv.indent,
             lineWidth: argv.lineWidth,
