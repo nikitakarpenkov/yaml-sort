@@ -2,6 +2,8 @@
 
 # About
 
+Fork of https://github.com/ddebin/yaml-sort with added nested arrays sorting capabilities.
+
 `yaml-sort` is a CLI tool sorting alphabetically [YAML](https://yaml.org/) files.
 
 This tool is basically a tiny wrapper around [js-yaml](https://github.com/nodeca/js-yaml).
@@ -10,7 +12,7 @@ This tool is basically a tiny wrapper around [js-yaml](https://github.com/nodeca
 
 # Installation
 
-`npm install -g yaml-sort`
+`npm install -g yaml-sort-with-arrays`
 
 # Usage
 
